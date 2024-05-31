@@ -155,19 +155,19 @@
             text-decoration: none;
             border-radius: 5px;
         }
-        @media (max-width: 767px) {
+        /* @media (max-width: 767px) { */
     /* Apply transparent background for mobile */
-    .navbar.bg-dark {
+    /* .navbar.bg-dark {
         background-color: gainsboro !important;
-    }
-}
+    } */
+/* }   */
 
 
 
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <nav class="navbar navbar-expand-lg  ftco_navbar ftco-navbar-light" id="ftco-navbar">
       <div class="container">
           <a class="navbar-brand" href="index.html">Travellers<span>Escape</span></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -654,6 +654,24 @@
   <script src="assets/js/bootstrap-datepicker.js"></script>
   <script src="assets/js/scrollax.min.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <script>
+    // Function to check screen size and remove the class
+    function checkScreenSize() {
+        const namebar = document.getElementById('ftco-navbar');
+        if (window.innerWidth <= 767) {
+            namebar.classList.remove('ftco-navbar-light');
+        } else {
+            namebar.classList.add('ftco-navbar-light');
+        }
+    }
+
+    // Check on initial load
+    checkScreenSize();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', checkScreenSize);
+</script>
     
   </body>
 </html>
